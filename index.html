@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVOR Coffee Shop</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                SAV<svg class="coffee-bean-icon" viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2ZM12,20C7.58,20 4,16.42 4,12C4,9.55 5.11,7.36 6.86,5.9C8.38,8.22 10.14,12.38 8.87,16.5C11.5,14.63 15.35,14.07 17.14,18.1C15.64,19.29 13.9,20 12,20Z"/></svg>R
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#signatures">Our Signature</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#order">Order Now</a></li>
+            </ul>
+            <button class="btn btn-primary" onclick="openModal('loginModal')">Log In</button>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1350&q=80');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="greeting" id="timeGreeting">🌅 Good Morning ☕</div>
+            <h1 class="hero-quote">Awaken Your Senses With Every Premium Sip</h1>
+            <div class="hero-btns">
+                <a href="#about" class="btn btn-secondary" style="color:#FFF; border-color:#FFF;">About Us</a>
+                <a href="#catalogue" class="btn btn-primary">Explore Catalogue</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Cafe Interior View" class="about-img">
+                <div class="about-text">
+                    <span class="experience-badge">5+ Years of Excellence</span>
+                    <h2>Crafting Perfection, One Cup at a Time</h2>
+                    <p>At SAVOR, we are dedicated to giving the right taste to our customers, satisfying even the most discerning coffee snobs. Over the last five years, our shop has grown from a passionate concept into a neighborhood sanctuary.</p>
+                    <p>We source ethically harvested beans from world-renowned origins, roasting them in micro-batches to highlight their distinct notes and aromas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE SECTION -->
+    <section class="signatures" id="signatures">
+        <div class="container">
+            <h2 class="section-title">Our Signatures</h2>
+            <div class="signature-grid">
+                
+                <div class="card" onclick="openSignatureModal('Savor Velvet Mocha', 'Espresso, melted dark chocolate, steamed milk, and a dusting of cocoa.', '$5.50', 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80')">
+                    <span class="badge">Best Seller</span>
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Savor Velvet Mocha">
+                    <div class="card-body">
+                        <h3 class="card-title">Savor Velvet Mocha</h3>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="card-price">$5.50</div>
+                        <button class="btn btn-primary" onclick="event.stopPropagation(); setOrderProduct('Savor Velvet Mocha');">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openSignatureModal('Savor Latte', 'Espresso blended with silky steamed milk and a thin layer of micro-foam.', '$4.80', 'https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80')">
+                    <span class="badge">Classic</span>
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Savor Latte">
+                    <div class="card-body">
+                        <h3 class="card-title">Savor Latte</h3>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="card-price">$4.80</div>
+                        <button class="btn btn-primary" onclick="event.stopPropagation(); setOrderProduct('Savor Latte');">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openSignatureModal('Iced Spanish Latte', 'Espresso mixed with condensed milk and chilled whole milk over ice.', '$5.20', 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80')">
+                    <span class="badge">Cold Specialty</span>
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Iced Spanish Latte">
+                    <div class="card-body">
+                        <h3 class="card-title">Iced Spanish Latte</h3>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="card-price">$5.20</div>
+                        <button class="btn btn-primary" onclick="event.stopPropagation(); setOrderProduct('Iced Spanish Latte');">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openSignatureModal('Espresso Brownie', 'Fudgy chocolate brownies infused with fresh espresso shots.', '$3.90', 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80')">
+                    <span class="badge">Sweet Treat</span>
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Espresso Brownie">
+                    <div class="card-body">
+                        <h3 class="card-title">Espresso Brownie</h3>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="card-price">$3.90</div>
+                        <button class="btn btn-primary" onclick="event.stopPropagation(); setOrderProduct('Espresso Brownie');">Order Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CATALOGUE SECTION -->
+    <section class="catalogue" id="catalogue">
+        <div class="container">
+            <h2 class="section-title">Our Catalogue</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="filterCatalogue('all')">All</button>
+                <button class="tab-btn" onclick="filterCatalogue('coffee')">Coffee</button>
+                <button class="tab-btn" onclick="filterCatalogue('tea')">Tea</button>
+                <button class="tab-btn" onclick="filterCatalogue('pastries')">Pastries</button>
+                <button class="tab-btn" onclick="filterCatalogue('sweets')">Sweets</button>
+                <button class="tab-btn" onclick="filterCatalogue('special')">Special Treat</button>
+            </div>
+
+            <div class="catalogue-grid" id="catalogueGrid">
+                <!-- Coffee Items -->
+                <div class="card catalogue-item coffee">
+                    <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Espresso">
+                    <div class="card-body">
+                        <h3 class="card-title">Espresso</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Pure, intense double shot of black coffee with a golden crema.</p>
+                        <div class="card-price">$3.00</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Espresso')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item coffee">
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Savor Latte">
+                    <div class="card-body">
+                        <h3 class="card-title">Savor Latte</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Espresso blended with silky steamed milk and micro-foam.</p>
+                        <div class="card-price">$4.80</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Savor Latte')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item coffee">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Cappuccino">
+                    <div class="card-body">
+                        <h3 class="card-title">Cappuccino</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Equal parts espresso, steamed milk, and rich milk foam.</p>
+                        <div class="card-price">$4.50</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Cappuccino')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item coffee">
+                    <img src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Flat White">
+                    <div class="card-body">
+                        <h3 class="card-title">Flat White</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Double ristretto shot with micro-foamed milk for a strong coffee flavor.</p>
+                        <div class="card-price">$4.60</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Flat White')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item coffee">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Cold Brew">
+                    <div class="card-body">
+                        <h3 class="card-title">Cold Brew</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Slow-steeped coffee served over ice for a smooth, non-acidic finish.</p>
+                        <div class="card-price">$4.50</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Cold Brew')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item coffee">
+                    <img src="https://images.unsplash.com/photo-1592663527359-cf6642f54cff?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Affogato">
+                    <div class="card-body">
+                        <h3 class="card-title">Affogato</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">A hot espresso shot poured directly over a scoop of vanilla ice cream.</p>
+                        <div class="card-price">$5.00</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Affogato')">Order</button>
+                    </div>
+                </div>
+
+                <!-- Tea Items -->
+                <div class="card catalogue-item tea">
+                    <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Matcha Green Tea Latte">
+                    <div class="card-body">
+                        <h3 class="card-title">Matcha Green Tea Latte</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Ceremonial grade matcha whisked with oat or almond milk.</p>
+                        <div class="card-price">$5.20</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Matcha Green Tea Latte')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item tea">
+                    <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Chai Tea Latte">
+                    <div class="card-body">
+                        <h3 class="card-title">Chai Tea Latte</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Spiced black tea brew blended with steamed milk and cinnamon.</p>
+                        <div class="card-price">$4.80</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Chai Tea Latte')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item tea">
+                    <img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Signature Hot Chocolate">
+                    <div class="card-body">
+                        <h3 class="card-title">Signature Hot Chocolate</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Rich cocoa melted with warm milk and topped with sea salt crema.</p>
+                        <div class="card-price">$4.70</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Signature Hot Chocolate')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item tea">
+                    <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Herbal Teas">
+                    <div class="card-body">
+                        <h3 class="card-title">Herbal Teas</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Chamomile, Earl Grey, Jasmine Green, and Peppermint options.</p>
+                        <div class="card-price">$3.50</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Herbal Teas')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item tea">
+                    <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Fruit Coolers">
+                    <div class="card-body">
+                        <h3 class="card-title">Fruit Coolers</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Refreshing Iced Hibiscus Berry Tea or fresh Mint Lemonade.</p>
+                        <div class="card-price">$4.20</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Fruit Coolers')">Order</button>
+                    </div>
+                </div>
+
+                <!-- Pastries -->
+                <div class="card catalogue-item pastries">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Butter Croissant">
+                    <div class="card-body">
+                        <h3 class="card-title">Butter Croissant</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Golden, flaky handmade pastry baked fresh every morning.</p>
+                        <div class="card-price">$3.20</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Butter Croissant')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item pastries">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Almond Croissant">
+                    <div class="card-body">
+                        <h3 class="card-title">Almond Croissant</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Toasted almonds and rich almond cream filling inside flaky dough.</p>
+                        <div class="card-price">$3.80</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Almond Croissant')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item pastries">
+                    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Pain au Chocolat">
+                    <div class="card-body">
+                        <h3 class="card-title">Pain au Chocolat</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Classic dark chocolate tucked inside flaky buttery pastry.</p>
+                        <div class="card-price">$3.60</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Pain au Chocolat')">Order</button>
+                    </div>
+                </div>
+
+                <!-- Sweets -->
+                <div class="card catalogue-item sweets">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Espresso Brownie">
+                    <div class="card-body">
+                        <h3 class="card-title">Espresso Brownie</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Fudgy chocolate brownie infused with real espresso shots.</p>
+                        <div class="card-price">$3.90</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Espresso Brownie')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item sweets">
+                    <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Blueberry Muffin">
+                    <div class="card-body">
+                        <h3 class="card-title">Blueberry Muffin</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Soft muffin packed with fresh organic blueberries.</p>
+                        <div class="card-price">$3.40</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Blueberry Muffin')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item sweets">
+                    <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Cinnamon Roll">
+                    <div class="card-body">
+                        <h3 class="card-title">Cinnamon Roll</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Warm, spiced roll topped with rich cream cheese frosting.</p>
+                        <div class="card-price">$4.00</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Cinnamon Roll')">Order</button>
+                    </div>
+                </div>
+
+                <!-- Special Treats -->
+                <div class="card catalogue-item special">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Savor Velvet Mocha">
+                    <div class="card-body">
+                        <h3 class="card-title">Savor Velvet Mocha</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Espresso, melted dark chocolate, steamed milk, dusting of cocoa.</p>
+                        <div class="card-price">$5.50</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Savor Velvet Mocha')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item special">
+                    <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Savor Latte">
+                    <div class="card-body">
+                        <h3 class="card-title">Savor Latte</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Espresso blended with silky steamed milk and thin micro-foam layer.</p>
+                        <div class="card-price">$4.80</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Savor Latte')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item special">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Iced Spanish Latte">
+                    <div class="card-body">
+                        <h3 class="card-title">Iced Spanish Latte</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Espresso mixed with condensed milk and chilled whole milk over ice.</p>
+                        <div class="card-price">$5.20</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Iced Spanish Latte')">Order</button>
+                    </div>
+                </div>
+
+                <div class="card catalogue-item special">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" class="card-img" alt="Espresso Brownie">
+                    <div class="card-body">
+                        <h3 class="card-title">Espresso Brownie</h3>
+                        <p style="font-size:0.85rem; margin-bottom:0.5rem;">Fudgy chocolate brownies infused with fresh espresso shots.</p>
+                        <div class="card-price">$3.90</div>
+                        <button class="btn btn-secondary" onclick="setOrderProduct('Espresso Brownie')">Order</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="center-btn">
+                <button class="btn btn-primary" onclick="openModal('fullMenuModal')">Show Overall Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-seedling feature-icon"></i>
+                    <h3>Fresh Coffee Beans</h3>
+                    <p style="font-size:0.9rem;">100% ethically sourced Arabica beans roasted locally for peak flavor profile.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-pump-soap feature-icon"></i>
+                    <h3>Clean Environment</h3>
+                    <p style="font-size:0.9rem;">Hygiene and comfort prioritized to offer a relaxing, spotless ambiance.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-birthday-cake feature-icon"></i>
+                    <h3>Artisanal Cakes</h3>
+                    <p style="font-size:0.9rem;">Handcrafted daily by master pastry chefs using top-shelf ingredients.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shipping-fast feature-icon"></i>
+                    <h3>Fast Delivery</h3>
+                    <p style="font-size:0.9rem;">Hot drinks and baked treats delivered quickly right to your doorstep.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wifi feature-icon"></i>
+                    <h3>24/7 Free Wi-Fi</h3>
+                    <p style="font-size:0.9rem;">Ultra-fast fiber internet available for digital nomads and student study sessions.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-fire-alt feature-icon"></i>
+                    <h3>Artisanal Roasting</h3>
+                    <p style="font-size:0.9rem;">In-house micro-batch roasting ensures supreme smoothness in every single espresso shot.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-heart feature-icon"></i>
+                    <h3>Cozy Community Space</h3>
+                    <p style="font-size:0.9rem;">Warm seating, eco-friendly practices, and a welcoming neighborhood atmosphere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Customer Reviews</h2>
+        </div>
+        <div class="ticker-wrap">
+            <div class="ticker-move">
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sophia M." class="user-dp">
+                    <p class="review-text">"SAVOR is my ultimate morning stop! The Savor Velvet Mocha is unmatched anywhere in town."</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Sophia M.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Liam K." class="user-dp">
+                    <p class="review-text">"Incredible cozy workspace with lightning-fast Wi-Fi. The Spanish Latte is sweet perfection!"</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Liam K.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Emma W." class="user-dp">
+                    <p class="review-text">"As a self-proclaimed coffee snob, their single-origin espresso blew me away."</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Emma W.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="David R." class="user-dp">
+                    <p class="review-text">"The Butter Croissants are as flaky as the ones I had in Paris. Fantastic service!"</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- David R.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Isabella P." class="user-dp">
+                    <p class="review-text">"Beautiful cafe ambiance, super polite baristas, and the Matcha Latte is authentic."</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Isabella P.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=150&q=80" alt="Oliver B." class="user-dp">
+                    <p class="review-text">"Fast delivery and the packaging keeps drinks warm. SAVOR never fails."</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Oliver B.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Mia C." class="user-dp">
+                    <p class="review-text">"Cinnamon Rolls paired with Flat White makes for the ultimate afternoon treat."</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Mia C.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&q=80" alt="James T." class="user-dp">
+                    <p class="review-text">"Clean environment, friendly staff, and the Espresso Brownie is fudgy perfection!"</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- James T.</div>
+                </div>
+
+                <!-- Loop Continuity Duplicates -->
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sophia M." class="user-dp">
+                    <p class="review-text">"SAVOR is my ultimate morning stop! The Savor Velvet Mocha is unmatched anywhere in town."</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Sophia M.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Liam K." class="user-dp">
+                    <p class="review-text">"Incredible cozy workspace with lightning-fast Wi-Fi. The Spanish Latte is sweet perfection!"</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Liam K.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Emma W." class="user-dp">
+                    <p class="review-text">"As a self-proclaimed coffee snob, their single-origin espresso blew me away."</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- Emma W.</div>
+                </div>
+                <div class="review-card-ticker">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="David R." class="user-dp">
+                    <p class="review-text">"The Butter Croissants are as flaky as the ones I had in Paris. Fantastic service!"</p>
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="user-name">- David R.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORDER & LOCATION SECTION -->
+    <section class="order-location" id="order">
+        <div class="container">
+            <h2 class="section-title">Order Online & Visit Us</h2>
+            <div class="order-grid">
+                <!-- Order Form -->
+                <form id="orderForm" onsubmit="handleOrderSubmit(event)">
+                    <div class="form-group">
+                        <label for="orderName">Your Name</label>
+                        <input type="text" id="orderName" class="form-control" required placeholder="Enter full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Select Product</label>
+                        <input type="hidden" id="orderProduct" required>
+                        <div class="custom-select-wrapper" id="customDropdown">
+                            <div class="custom-select-trigger" id="dropdownTrigger">-- Choose an item --</div>
+                            <div class="custom-options" id="dropdownOptions">
+                                <div class="custom-option" data-value="Savor Velvet Mocha">Savor Velvet Mocha</div>
+                                <div class="custom-option" data-value="Savor Latte">Savor Latte</div>
+                                <div class="custom-option" data-value="Iced Spanish Latte">Iced Spanish Latte</div>
+                                <div class="custom-option" data-value="Espresso Brownie">Espresso Brownie</div>
+                                <div class="custom-option" data-value="Espresso">Espresso</div>
+                                <div class="custom-option" data-value="Cappuccino">Cappuccino</div>
+                                <div class="custom-option" data-value="Flat White">Flat White</div>
+                                <div class="custom-option" data-value="Cold Brew">Cold Brew</div>
+                                <div class="custom-option" data-value="Affogato">Affogato</div>
+                                <div class="custom-option" data-value="Matcha Green Tea Latte">Matcha Green Tea Latte</div>
+                                <div class="custom-option" data-value="Chai Tea Latte">Chai Tea Latte</div>
+                                <div class="custom-option" data-value="Signature Hot Chocolate">Signature Hot Chocolate</div>
+                                <div class="custom-option" data-value="Herbal Teas">Herbal Teas</div>
+                                <div class="custom-option" data-value="Fruit Coolers">Fruit Coolers</div>
+                                <div class="custom-option" data-value="Butter Croissant">Butter Croissant</div>
+                                <div class="custom-option" data-value="Almond Croissant">Almond Croissant</div>
+                                <div class="custom-option" data-value="Pain au Chocolat">Pain au Chocolat</div>
+                                <div class="custom-option" data-value="Blueberry Muffin">Blueberry Muffin</div>
+                                <div class="custom-option" data-value="Cinnamon Roll">Cinnamon Roll</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orderAddress">Delivery Address</label>
+                        <textarea id="orderAddress" class="form-control" rows="3" required placeholder="Enter street address"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Order Now</button>
+                </form>
+
+                <!-- Location Map -->
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3696.883726715006!2d-107.394025!3d24.809052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86bcd72ef1fbfa3b%3A0x6b9d8dc9366e8fa1!2sSinaloa%2C%20Mexico!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY & FEEDBACK SECTION -->
+    <section class="gallery-feedback">
+        <div class="container">
+            <div class="gf-grid">
+                <div class="gallery-box">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80" alt="Shop Interior">
+                    <div class="gallery-overlay">
+                        <button class="btn btn-primary" onclick="openModal('galleryModal')"><i class="fas fa-images"></i> View Photo Gallery</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>Send Us a Message</h2>
+                    <p style="margin-bottom: 1.5rem; color: #666;">We value your reviews and take complaints seriously to keep improving our service.</p>
+                    <form onsubmit="handleFeedbackSubmit(event)">
+                        <div class="form-group">
+                            <label for="fbName">Name</label>
+                            <input type="text" id="fbName" class="form-control" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="fbCategory">Category</label>
+                            <select id="fbCategory" class="form-control" required>
+                                <option value="Review">Review</option>
+                                <option value="Complaint">Complaint</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fbMessage">Message</label>
+                            <textarea id="fbMessage" class="form-control" rows="3" required placeholder="Write your feedback here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary" style="width: 100%;">Submit Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>SAVOR Coffee</h3>
+                    <p>Where artisanal crafting meets exceptional warmth. Your home away from home for the finest coffee, pastries, and community experience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#signatures">Our Signatures</a></li>
+                        <li><a href="#catalogue">Catalogue</a></li>
+                        <li><a href="#order">Order Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Opening Hours</h3>
+                    <p>Monday - Friday: 6:30 AM - 9:00 PM</p>
+                    <p>Saturday - Sunday: 7:00 AM - 10:00 PM</p>
+                    <p>Wi-Fi Access: 24/7 Active</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Sinaloa, Mexico</p>
+                    <p><i class="fas fa-envelope"></i> contact@savorcoffee.com</p>
+                    <p><i class="fas fa-phone"></i> +52 (667) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SAVOR Coffee Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
+            <h2 style="margin-bottom: 1rem; text-align:center;">Log In</h2>
+            <form onsubmit="handleLoginSubmit(event)">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" required placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" required placeholder="Enter email address">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top:0.5rem;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SIGNATURE DETAIL MODAL -->
+    <div class="modal" id="signatureModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signatureModal')">&times;</span>
+            <img id="sigModalImg" src="" style="width:100%; height:200px; object-fit:cover; border-radius:8px; margin-bottom:1rem;" alt="">
+            <h2 id="sigModalTitle" style="margin-bottom:0.5rem;"></h2>
+            <p id="sigModalDesc" style="margin-bottom:1rem; color:#555;"></p>
+            <div id="sigModalPrice" style="font-size:1.3rem; font-weight:bold; color:var(--primary-accent); margin-bottom:1rem;"></div>
+            <button class="btn btn-primary" style="width: 100%;" id="sigModalOrderBtn">Order This Item</button>
+        </div>
+    </div>
+
+    <!-- GALLERY MODAL -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content modal-content-lg">
+            <span class="close-modal" onclick="closeModal('galleryModal')">&times;</span>
+            <h2>Cafe & Kitchen Gallery</h2>
+            <p>A glimpse behind the scenes at SAVOR</p>
+            <div class="gallery-grid-modal">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1592663527359-cf6642f54cff?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=400&q=80" alt="Gallery item">
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERALL MENU MODAL -->
+    <div class="modal" id="fullMenuModal">
+        <div class="modal-content modal-content-lg">
+            <span class="close-modal" onclick="closeModal('fullMenuModal')">&times;</span>
+            <h2>SAVOR Complete Menu</h2>
+            <p style="margin-bottom:1rem;">All available coffee, tea, pastries, and treats.</p>
+            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1rem;">
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Espresso</strong> - $3.00</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Savor Latte</strong> - $4.80</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Cappuccino</strong> - $4.50</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Flat White</strong> - $4.60</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Cold Brew</strong> - $4.50</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Affogato</strong> - $5.00</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Savor Velvet Mocha</strong> - $5.50</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Iced Spanish Latte</strong> - $5.20</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Matcha Green Tea Latte</strong> - $5.20</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Chai Tea Latte</strong> - $4.80</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Hot Chocolate</strong> - $4.70</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Herbal Teas</strong> - $3.50</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Fruit Coolers</strong> - $4.20</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Butter Croissant</strong> - $3.20</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Almond Croissant</strong> - $3.80</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Pain au Chocolat</strong> - $3.60</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Espresso Brownie</strong> - $3.90</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Blueberry Muffin</strong> - $3.40</div>
+                <div style="background:var(--color-light-tan); padding:0.8rem; border-radius:8px;"><strong>Cinnamon Roll</strong> - $4.00</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js">
+       
+    </script>
+</body>
+</html>
