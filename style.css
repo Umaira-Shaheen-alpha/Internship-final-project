@@ -150,7 +150,7 @@
         /* HERO SECTION */
         .hero {
             position: relative;
-            height: 80vh;
+            height: 90vh;
             min-height: 500px;
             display: flex;
             align-items: center;
@@ -216,6 +216,10 @@
             margin-bottom: 1.5rem;
             font-weight: 700;
             line-height: 1.2;
+        }
+        .hero p {
+            padding-bottom: 20px;
+            font-size: 1.1rem;
         }
 
         .hero-btns {
